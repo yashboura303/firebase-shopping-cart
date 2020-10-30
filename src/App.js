@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import React, { useState, useEffect } from "react";
+import { Container } from "react-bootstrap";
+import { auth, firebaseDB } from "./fireBase/config";
+import AuthForm from "./components/AuthForm";
+import DashBoard from "./components/DashBoard";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [user, setUser] = useState(true);
+    auth.onAuthStateChanged(function (signed_in_user) {
+        if (signed_in_user) {
+            // User is signed in.
+        } else {
+            // No user is signed in.
+        }
+    });
+    return (
+      {!user ? (
+        <Container fluid className="d-flex align-items-center justify-content-center bg-secondary"
+                        style={{ minHeight: "100vh" }}
+                    >
+                        <div className="w-100">
+                            <AuthForm setUser={setUser} />
+                        </div>
+                    </Container>
+    ) : (
+            <DashBoard/>
+    )}
+    );
 }
 
 export default App;

@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+    font-family: "Roboto";
+}
+.main-form {
+    border-radius: 25px;
+    border: 2px solid black;
+    .form-p {
+        font-size: 0.9rem;
+        margin-top: 1rem;
+        span {
+            cursor: pointer;
+            color: rgb(10, 121, 121);
+            font-weight: 600;
+        }
+        span:hover {
+            border-bottom: 1px solid rgb(10, 121, 121);
+        }
+    }
+}
+.dashboard-page {
+    height: 100vh;
+    min-height: 100vh;
+}

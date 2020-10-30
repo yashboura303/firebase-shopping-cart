@@ -1,0 +1,40 @@
+{
+    "products": [
+        {
+            "name": "Bat",
+            "price": 3000,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer enim nisl, feugiat mattis cursus et, dictum eu ipsum. Integer aliquam a odio vel tempor. In euismod, orci sit amet scelerisque lobortis, nisi tellus varius est, id porta turpis risus sed ipsum.",
+            "image": "./Images/bat.jpg"
+        },
+        {
+            "name": "Bat",
+            "price": 3000,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer enim nisl, feugiat mattis cursus et, dictum eu ipsum. Integer aliquam a odio vel tempor. In euismod, orci sit amet scelerisque lobortis, nisi tellus varius est, id porta turpis risus sed ipsum.",
+            "image": "./Images/bat.jpg"
+        },
+        {
+            "name": "Bat",
+            "price": 3000,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer enim nisl, feugiat mattis cursus et, dictum eu ipsum. Integer aliquam a odio vel tempor. In euismod, orci sit amet scelerisque lobortis, nisi tellus varius est, id porta turpis risus sed ipsum.",
+            "image": "./Images/bat.jpg"
+        },
+        {
+            "name": "Bat",
+            "price": 3000,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer enim nisl, feugiat mattis cursus et, dictum eu ipsum. Integer aliquam a odio vel tempor. In euismod, orci sit amet scelerisque lobortis, nisi tellus varius est, id porta turpis risus sed ipsum.",
+            "image": "./Images/bat.jpg"
+        },
+        {
+            "name": "Bat",
+            "price": 3000,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer enim nisl, feugiat mattis cursus et, dictum eu ipsum. Integer aliquam a odio vel tempor. In euismod, orci sit amet scelerisque lobortis, nisi tellus varius est, id porta turpis risus sed ipsum.",
+            "image": "./Images/bat.jpg"
+        },
+        {
+            "name": "Bat",
+            "price": 3000,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer enim nisl, feugiat mattis cursus et, dictum eu ipsum. Integer aliquam a odio vel tempor. In euismod, orci sit amet scelerisque lobortis, nisi tellus varius est, id porta turpis risus sed ipsum.",
+            "image": "./Images/bat.jpg"
+        }
+    ]
+}
