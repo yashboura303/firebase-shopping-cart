@@ -35,13 +35,14 @@ export default function DashBoard({ user, setUser }) {
         fetchCartProducts();
     }, [user.uid]);
 
-    const updateFirebaseDB = (newArr, productName, success) => {
+    const updateFirebaseDB = (cartProducts, productName, success) => {
+        console.log(cartProducts);
         firebaseDB
             .ref("/users")
             .child(user.uid)
             .set(
                 {
-                    cart: newArr,
+                    cart: cartProducts,
                 },
                 function (error) {
                     if (error) {
@@ -64,12 +65,14 @@ export default function DashBoard({ user, setUser }) {
             );
     };
     const deleteFromCart = deletedProduct => {
+        setCartProducts(
+            cartProducts.filter(product => product.id !== deletedProduct.id)
+        );
         let newArr = cartProducts;
         let index = cartProducts.findIndex(
             product => product.id === deletedProduct.id
         );
         newArr.splice(index, 1);
-        setCartProducts(newArr);
         updateFirebaseDB(newArr, deletedProduct.name, false);
     };
     const addToCart = addedProduct => {

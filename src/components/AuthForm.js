@@ -24,6 +24,7 @@ export default function AuthForm({ setUser }) {
             userInput.password
         ).catch(err => {
             setError(err.message);
+            setShow(true);
         });
     };
     const handleSignUp = async () => {
@@ -40,7 +41,6 @@ export default function AuthForm({ setUser }) {
             };
             setUser(new_user);
         } catch (err) {
-            console.log(err.message);
             setError(err.message);
             setShow(true);
         }
@@ -54,87 +54,92 @@ export default function AuthForm({ setUser }) {
         }
     };
     return (
-        <Container className="w-50  px-5 pt-3 pb-5 main-form bg-white">
-            {hasAccount ? (
-                <h2 className="text-center text-info my-2">Welcome Back!</h2>
-            ) : (
-                <h2 className="text-center text-info my-2">Register Now!</h2>
-            )}
+        <>
+            <h1 className="text-center mt-0 mb-5 text-warning">
+                Welcome To Shopping Cart
+            </h1>
+            <Container className="w-50  px-5 pt-3 pb-3 main-form bg-white">
+                {hasAccount ? (
+                    <h2 className="text-center text-info my-2">Login</h2>
+                ) : (
+                    <h2 className="text-center text-info my-2">Register</h2>
+                )}
 
-            {error && show && (
-                <Alert
-                    variant="danger"
-                    onClose={() => setShow(false)}
-                    dismissible
-                >
-                    {error}
-                </Alert>
-            )}
-            <Form onSubmit={submitForm}>
-                <Form.Group>
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control
-                        type="email"
-                        placeholder="Enter email"
-                        onChange={handleChange}
-                        name="email"
-                    />
-                </Form.Group>
-                {!hasAccount && (
+                {error && show && (
+                    <Alert
+                        variant="danger"
+                        onClose={() => setShow(false)}
+                        dismissible
+                    >
+                        {error}
+                    </Alert>
+                )}
+                <Form onSubmit={submitForm}>
                     <Form.Group>
-                        <Form.Label>Name</Form.Label>
+                        <Form.Label>Email address</Form.Label>
                         <Form.Control
-                            type="name"
+                            type="email"
                             placeholder="Enter email"
                             onChange={handleChange}
-                            name="name"
+                            name="email"
                         />
                     </Form.Group>
-                )}
-                <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control
-                        type="password"
-                        placeholder="Password"
-                        name="password"
-                        onChange={handleChange}
-                    />
-                </Form.Group>
+                    {!hasAccount && (
+                        <Form.Group>
+                            <Form.Label>Name</Form.Label>
+                            <Form.Control
+                                type="name"
+                                placeholder="Enter email"
+                                onChange={handleChange}
+                                name="name"
+                            />
+                        </Form.Group>
+                    )}
+                    <Form.Group controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control
+                            type="password"
+                            placeholder="Password"
+                            name="password"
+                            onChange={handleChange}
+                        />
+                    </Form.Group>
 
-                {hasAccount ? (
-                    <Container fluid className="text-center ">
-                        <Button
-                            variant="success"
-                            className="w-50 mt-2"
-                            type="submit"
-                        >
-                            Login
-                        </Button>
-                        <p className="form-p">
-                            Don't have an account?{" "}
-                            <span onClick={() => setHasAccount(false)}>
-                                Sign-Up
-                            </span>
-                        </p>
-                    </Container>
-                ) : (
-                    <Container fluid className="text-center ">
-                        <Button
-                            variant="success"
-                            className="w-50 mt-2"
-                            type="submit"
-                        >
-                            Sign-Up
-                        </Button>
-                        <p className="form-p">
-                            Already have an account?{" "}
-                            <span onClick={() => setHasAccount(true)}>
+                    {hasAccount ? (
+                        <Container fluid className="text-center ">
+                            <Button
+                                variant="success"
+                                className="w-50 mt-2"
+                                type="submit"
+                            >
                                 Login
-                            </span>
-                        </p>
-                    </Container>
-                )}
-            </Form>
-        </Container>
+                            </Button>
+                            <p className="form-p">
+                                Don't have an account?{" "}
+                                <span onClick={() => setHasAccount(false)}>
+                                    Sign-Up
+                                </span>
+                            </p>
+                        </Container>
+                    ) : (
+                        <Container fluid className="text-center ">
+                            <Button
+                                variant="success"
+                                className="w-50 mt-2"
+                                type="submit"
+                            >
+                                Sign-Up
+                            </Button>
+                            <p className="form-p">
+                                Already have an account?{" "}
+                                <span onClick={() => setHasAccount(true)}>
+                                    Login
+                                </span>
+                            </p>
+                        </Container>
+                    )}
+                </Form>
+            </Container>
+        </>
     );
 }
