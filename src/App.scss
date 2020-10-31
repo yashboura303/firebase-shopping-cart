@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import "~bootstrap/scss/bootstrap";
 * {
     font-family: "Roboto";
 }
@@ -21,4 +22,14 @@
 .dashboard-page {
     height: 100vh;
     min-height: 100vh;
+    .navbar-brand {
+        font-size: 2rem;
+    }
+    .nav-item {
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    .nav-item:hover {
+        color: rgb(154, 156, 156);
+    }
 }

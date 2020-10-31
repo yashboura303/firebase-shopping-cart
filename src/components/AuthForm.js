@@ -1,12 +1,10 @@
 import React, { useState, useReducer } from "react";
 import { Button, Form, Container, Alert } from "react-bootstrap";
-import { auth } from "../fireBase/config";
+import { auth } from "../firebase/config";
 
 export default function AuthForm({ setUser }) {
-    const user = false;
     const [error, setError] = useState("");
     const [show, setShow] = useState(true);
-    const onDismiss = () => setVisible(false);
     const [hasAccount, setHasAccount] = useState(false);
     const [userInput, setUserInput] = useReducer(
         (state, newState) => ({ ...state, ...newState }),
@@ -28,27 +26,24 @@ export default function AuthForm({ setUser }) {
             setError(err.message);
         });
     };
-    const handleSignUp = () => {
-        auth.createUserWithEmailAndPassword(
-            userInput.email,
-            userInput.password
-        ).then(
-            function (user) {
-                setError("");
-                var new_user = auth.currentUser;
-                new_user
-                    .updateProfile({
-                        displayName: userInput.name,
-                    })
-                    .then(function () {
-                        setUser(new_user);
-                        console.log("userrr", new_user);
-                    });
-            },
-            function (err) {
-                setError(err.message);
-            }
-        );
+    const handleSignUp = async () => {
+        try {
+            const userCredentials = await auth.createUserWithEmailAndPassword(
+                userInput.email,
+                userInput.password
+            );
+            await userCredentials.user.updateProfile({
+                displayName: userInput.name,
+            });
+            const new_user = {
+                ...userCredentials.user,
+            };
+            setUser(new_user);
+        } catch (err) {
+            console.log(err.message);
+            setError(err.message);
+            setShow(true);
+        }
     };
     const submitForm = e => {
         e.preventDefault();
@@ -66,7 +61,7 @@ export default function AuthForm({ setUser }) {
                 <h2 className="text-center text-info my-2">Register Now!</h2>
             )}
 
-            {error && (
+            {error && show && (
                 <Alert
                     variant="danger"
                     onClose={() => setShow(false)}
@@ -76,7 +71,7 @@ export default function AuthForm({ setUser }) {
                 </Alert>
             )}
             <Form onSubmit={submitForm}>
-                <Form.Group controlId="formBasicEmail">
+                <Form.Group>
                     <Form.Label>Email address</Form.Label>
                     <Form.Control
                         type="email"
@@ -86,7 +81,7 @@ export default function AuthForm({ setUser }) {
                     />
                 </Form.Group>
                 {!hasAccount && (
-                    <Form.Group controlId="formBasicEmail">
+                    <Form.Group>
                         <Form.Label>Name</Form.Label>
                         <Form.Control
                             type="name"
@@ -101,13 +96,18 @@ export default function AuthForm({ setUser }) {
                     <Form.Control
                         type="password"
                         placeholder="Password"
+                        name="password"
                         onChange={handleChange}
                     />
                 </Form.Group>
 
                 {hasAccount ? (
                     <Container fluid className="text-center ">
-                        <Button variant="success" className="w-50 mt-2">
+                        <Button
+                            variant="success"
+                            className="w-50 mt-2"
+                            type="submit"
+                        >
                             Login
                         </Button>
                         <p className="form-p">
@@ -119,7 +119,11 @@ export default function AuthForm({ setUser }) {
                     </Container>
                 ) : (
                     <Container fluid className="text-center ">
-                        <Button variant="success" className="w-50 mt-2">
+                        <Button
+                            variant="success"
+                            className="w-50 mt-2"
+                            type="submit"
+                        >
                             Sign-Up
                         </Button>
                         <p className="form-p">

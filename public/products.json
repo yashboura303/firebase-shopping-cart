@@ -2,39 +2,51 @@
     "products": [
         {
             "name": "Bat",
-            "price": 3000,
+            "price": 2000,
+            "id": 1,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer enim nisl, feugiat mattis cursus et, dictum eu ipsum. Integer aliquam a odio vel tempor. In euismod, orci sit amet scelerisque lobortis, nisi tellus varius est, id porta turpis risus sed ipsum.",
-            "image": "./Images/bat.jpg"
+            "image": "./Images/bat.jpg",
+            "quantity": 1
         },
         {
-            "name": "Bat",
-            "price": 3000,
+            "name": "Football",
+            "price": 600,
+            "id": 2,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer enim nisl, feugiat mattis cursus et, dictum eu ipsum. Integer aliquam a odio vel tempor. In euismod, orci sit amet scelerisque lobortis, nisi tellus varius est, id porta turpis risus sed ipsum.",
-            "image": "./Images/bat.jpg"
+            "image": "./Images/football.jpg",
+            "quantity": 1
         },
         {
-            "name": "Bat",
+            "name": "Jeans",
             "price": 3000,
+            "id": 3,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer enim nisl, feugiat mattis cursus et, dictum eu ipsum. Integer aliquam a odio vel tempor. In euismod, orci sit amet scelerisque lobortis, nisi tellus varius est, id porta turpis risus sed ipsum.",
-            "image": "./Images/bat.jpg"
+            "image": "./Images/jeans.jpg",
+            "quantity": 1
         },
         {
-            "name": "Bat",
-            "price": 3000,
+            "name": "Mobile",
+            "price": 18000,
+            "id": 4,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer enim nisl, feugiat mattis cursus et, dictum eu ipsum. Integer aliquam a odio vel tempor. In euismod, orci sit amet scelerisque lobortis, nisi tellus varius est, id porta turpis risus sed ipsum.",
-            "image": "./Images/bat.jpg"
+            "image": "./Images/mobile.jpg",
+            "quantity": 1
         },
         {
-            "name": "Bat",
-            "price": 3000,
+            "name": "Shirt",
+            "price": 300,
+            "id": 5,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer enim nisl, feugiat mattis cursus et, dictum eu ipsum. Integer aliquam a odio vel tempor. In euismod, orci sit amet scelerisque lobortis, nisi tellus varius est, id porta turpis risus sed ipsum.",
-            "image": "./Images/bat.jpg"
+            "image": "./Images/shirt.jpg",
+            "quantity": 1
         },
         {
-            "name": "Bat",
-            "price": 3000,
+            "name": "Headphone",
+            "price": 1200,
+            "id": 6,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer enim nisl, feugiat mattis cursus et, dictum eu ipsum. Integer aliquam a odio vel tempor. In euismod, orci sit amet scelerisque lobortis, nisi tellus varius est, id porta turpis risus sed ipsum.",
-            "image": "./Images/bat.jpg"
+            "image": "./Images/headphone.jpg",
+            "quantity": 1
         }
     ]
 }
