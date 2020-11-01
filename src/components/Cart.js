@@ -24,17 +24,13 @@ export default function Cart({
                                         <Container>
                                             <img
                                                 src={product.image}
-                                                style={{
-                                                    width: "200px",
-                                                    height: "100px",
-                                                    borderRadius: "5px",
-                                                }}
+                                                class="cart-images"
                                                 alt=""
                                             />
                                         </Container>
                                         <Container>
                                             <p className="mb-0">
-                                                {product.name}
+                                                <strong>{product.name}</strong>
                                             </p>
                                             <p>Quantity - {product.quantity}</p>
                                             <Button
