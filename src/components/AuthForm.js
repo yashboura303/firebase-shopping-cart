@@ -55,7 +55,10 @@ export default function AuthForm({ setUser }) {
     };
     return (
         <>
-            <h1 className="text-center mt-0 mb-5 text-warning">
+            <h1
+                className="text-center mt-0 mb-5 text-white"
+                style={{ fontWeight: "800" }}
+            >
                 Welcome To Shopping Cart
             </h1>
             <Container className="w-50  px-5 pt-3 pb-3 main-form bg-white">
@@ -76,7 +79,7 @@ export default function AuthForm({ setUser }) {
                 )}
                 <Form onSubmit={submitForm}>
                     <Form.Group>
-                        <Form.Label>Email address</Form.Label>
+                        <Form.Label>Email </Form.Label>
                         <Form.Control
                             type="email"
                             placeholder="Enter email"
@@ -88,8 +91,8 @@ export default function AuthForm({ setUser }) {
                         <Form.Group>
                             <Form.Label>Name</Form.Label>
                             <Form.Control
-                                type="name"
-                                placeholder="Enter email"
+                                type="text"
+                                placeholder="Username"
                                 onChange={handleChange}
                                 name="name"
                             />

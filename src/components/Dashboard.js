@@ -36,7 +36,6 @@ export default function DashBoard({ user, setUser }) {
     }, [user.uid]);
 
     const updateFirebaseDB = (cartProducts, productName, success) => {
-        console.log(cartProducts);
         firebaseDB
             .ref("/users")
             .child(user.uid)
@@ -99,13 +98,16 @@ export default function DashBoard({ user, setUser }) {
         updateFirebaseDB(newArr, addedProduct.name, true);
     };
     return (
-        <div className="dashboard-page ">
+        <div className="dashboard-page pb-4">
             <DashboardNavbar
                 logout={logout}
                 cartProducts={cartProducts}
                 deleteFromCart={deleteFromCart}
             />
-            <h2 className="text-center mt-3 text-dark bg-warning py-1">
+            <h2
+                className="text-center mt-3 text-dark  py-1"
+                style={{ color: "#1B4965", fontWeight: "600" }}
+            >
                 Welcome {user.displayName}
             </h2>
             <hr />

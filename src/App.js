@@ -39,7 +39,7 @@ function App() {
             ) : (
                 <Container
                     fluid
-                    className="d-flex align-items-center justify-content-center bg-secondary"
+                    className="d-flex align-items-center justify-content-center svg-background"
                     style={{ minHeight: "100vh" }}
                 >
                     <div className="w-100">
